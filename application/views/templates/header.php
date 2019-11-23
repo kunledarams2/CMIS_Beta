@@ -5,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/applicationform.css">
-        <script type='text/javascript'  src="<?php echo base_url(); ?> js/applicationform.js"></script>
+        <script type='text/javascript'  src="<?php echo base_url(); ?>/assets/js/admissionform.js"></script>
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
