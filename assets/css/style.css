@@ -14,6 +14,7 @@
     width: 100%;
     margin: auto;
     padding: 20px 30px;
+    position: relative;
 }
 .box{
     margin: 5% auto;
@@ -27,15 +28,15 @@
 }
 .box_application{
     /* width: 600px; */
-    margin: 0px auto;
+    margin: 30px auto;
     background: white;
     /* border: 0 none;*/
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px; 
      box-sizing: border-box;  
     width: 60%;
-    height: 80%;
+    height: 90%;
    
     /* margin: 5% 10% 10%; */
 

@@ -84,4 +84,32 @@ $(document).ready(function(){
         $('#pervious_eduction_info').addClass('fade');
         $('#pervious_eduction_info').removeClass('active');
     })
+
+    $('#btn_church_prev').click(function(){
+        $('#list_church_information').removeClass('active_tab1');
+        $('#list_church_information').addClass('inactive_tab1');
+        $('#church_details').addClass('fade');
+        $('#church_details').removeClass('active');
+
+        $('#list_education_information').removeClass('inactive_tab1');
+        $('#list_education_information').addClass('active active_tab1');
+        $('#pervious_eduction_info').removeClass('fade');
+        $('#pervious_eduction_info').addClass('active in');
+    })
+    $('#btn_church_next').click(function(){
+        $('#list_parent_information').removeClass('inactive_tab1');
+        $('#list_parent_information').addClass('active_tab1');
+
+        $('#parent_information').removeClass('fade');
+        $('#parent_information').addClass('active');
+
+        $('#list_church_information').removeClass('active_tab1');
+        $('#list_church_information').addClass('inactive_tab1');
+        $('#church_details').addClass('fade');
+        $('#church_details').removeClass('active');
+
+        
+
+
+    })
 })
