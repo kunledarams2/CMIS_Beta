@@ -24,7 +24,8 @@ class Admissions extends CI_Controller{
     function createaccount(){
         $data['title'] = "Create Account";
 
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('email_address', 'Email Address', 'required|callback_check_email_exists');
+        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'matches[password]');
 
@@ -35,10 +36,40 @@ class Admissions extends CI_Controller{
             $this->load->view('templates/footer');
         }
         else{
+
+            // encret password
+            $enc_password= md5($this->input->post('password'));
+
+            $this->addmission_model->create_account($enc_password);
+            // flashing message before redirect
+            $this->session->set_flashData('account_created', 'Your account is successfully created, You can now Log in');
             // die('continue');
             return redirect('admissions/login');
         }
         
+    }
+
+    // check username exist
+
+    function check_username_exists($username){
+        $this->form_validation->set_message('check_username_exists', 
+        'Username already exist, Please choose a different username');
+        if($this->addmission_model->check_username_exists($username)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    // check email exist
+    function check_email_exists($email){
+        $this->form_validation->set_message('check_email_exists', 
+        'Email already exist, Please choose a different email');
+        if($this->addmission_model->check_email_exists($email)){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     function applicationform(){

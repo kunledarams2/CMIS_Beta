@@ -116,11 +116,12 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"> Details on pervious eduction
 				<div class="panel-body">
+				<br>
 					<div class="form-group">
 						<label>Primary School Attended</label>
 						<input type="text" class="form-control" name="primaryschool" placeholder="">
 					</div>
-
+					<br>
 					<div class="form-group">
 						<label class="in-line">Start Date</label>
 						<input class="in-line" type="text" class="form-control" name="startdate" placeholder="">
@@ -128,12 +129,13 @@
 						<label class="in-line">End Date</label>
 						<input class="in-line" type="text" class="form-control" name="enddate" placeholder="">
 					</div>
+					<br>
 					<p>(JSS2 & SS1 only)</p>
 					<div class="form-group">
 						<label>Secondary School Attended </label>
 						<input type="text" class="form-control" name="secondary" placeholder="">
 					</div>
-
+					<br>
 					<div class="form-group">
 						<label class="in-line">Start Date</label>
 						<input class="in-line" type="text" class="form-control" name="startdatesecondary" placeholder="">
@@ -145,6 +147,7 @@
 
 			</div>
 		</div>
+		<br>
 
 		<div align="center">
 			<button type="button" class="btn btn-default btn-lg" id="btn_eduction_prev"> Previous</button>
@@ -160,16 +163,17 @@
        <div class="panel panel-default">
         <div class="panel-heading"> Details about your spiritual and church 
          <div class="panel-body">
+		 <br>
            <div class="form-group">
             <label >Full name of Church</label>
              <input type="text" class="form-control" name="church" placeholder="Church Name">
            </div>
-
+		   <br>
            <div class="form-group">
             <label >Church Denomination</label>
              <input type="text" class="form-control" name="churchdenomiation" placeholder="Church Denomination">
            </div>
-
+		   <br>
            <div class="form-group">
             <label >Full name of Pastor</label>
              <input type="text" class="form-control" name="healthissue" placeholder="Physical Health Challenge">
@@ -180,6 +184,7 @@
         </div>
        </div>
 
+	   <br>
        <div align="center">
          <button type="button" class="btn btn-default btn-lg" id="btn_church_prev"> Previous</button>
          <button type="button" class="btn btn-info btn-lg" id="btn_church_next"> Next </button>
@@ -199,7 +204,6 @@
 		
              <input type="text" class="form-control" name="parent_name" placeholder="">
            </div>
-
            <div class="form-group">
             <label >Place of Residence (State/Town)</label>
              <input type="text" class="form-control" name="parent_residence" placeholder="">

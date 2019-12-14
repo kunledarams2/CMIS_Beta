@@ -3,17 +3,42 @@ $(document).ready(function(){
 
     $('#btn_basic_information').click(function(){
 
-        $('#list_basic_information').removeClass('active active_tab1');
-        $('#list_basic_information').removeAttr('href data-toggle');
-        $('#basic_information').removeClass('active');
-        // $('#basic_information').addClass('fade');
-        $('#list_basic_information').addClass('inactive_tab1');
-        $('#list_personal_information').removeClass('inactive_tab1');
-        $('#list_personal_information').addClass('active_tab1 active');
-        $('#list_personal_information').attr('href', '#personal_information');
-        $('#list_personal_information').attr('data-toggle', 'tab');
-        $('#personal_information').removeClass(' fade ');
-        $('#personal_information').addClass('active');
+        var surnameError= '';
+        var firstname_error='';
+        var error_age ='';
+
+        if($.trim($('#surname').val()).length==0){
+            surnameError ='Surname is required';
+            $('#error_surname').text(surnameError);
+           
+
+        } else if($.trim($('#firstname').val()).length==0){
+            firstname_error ='First Name is required';
+            $('#error_firstname').text(firstname_error);
+
+        } else if($.trim($('#age').val()).length ==0){
+            error_age ='Age is required';
+            $('#error_age').text(error_age);
+        }
+        else{
+            if($.trim($('#surname').val()).length>0){
+                surnameError= '';
+                $('#error_surname').text(surnameError);
+            }
+
+            $('#list_basic_information').removeClass('active active_tab1');
+            $('#list_basic_information').removeAttr('href data-toggle');
+            $('#basic_information').removeClass('active');
+            // $('#basic_information').addClass('fade');
+            $('#list_basic_information').addClass('inactive_tab1');
+            $('#list_personal_information').removeClass('inactive_tab1');
+            $('#list_personal_information').addClass('active_tab1 active');
+            $('#list_personal_information').attr('href', '#personal_information');
+            $('#list_personal_information').attr('data-toggle', 'tab');
+            $('#personal_information').removeClass(' fade ');
+            $('#personal_information').addClass('active');
+        }
+       
 
 
     })
