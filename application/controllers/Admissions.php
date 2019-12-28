@@ -2,24 +2,7 @@
 <?php
 class Admissions extends CI_Controller{
 
-    function login(){
-
-        $data['title'] = 'Login';
-
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        // $this->form_validation->set_rules('username', 'Username', 'required');
-        if($this->form_validation->run()===FALSE){
-
-        $this->load->view('templates/header');
-        $this->load->view('admissions/login', $data);
-        $this->load->view('templates/footer');
-        } else{
-            // die('continue');
-             return redirect('admissions/applicationform');
-        }
-        
-    }
+  
 
     function createaccount(){
         $data['title'] = "Create Account";
@@ -72,11 +55,57 @@ class Admissions extends CI_Controller{
         }
     }
 
+
+    function login(){
+
+        $data['title'] = 'Login';
+
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        // $this->form_validation->set_rules('username', 'Username', 'required');
+        if($this->form_validation->run()===FALSE){
+
+        $this->load->view('templates/header');
+        $this->load->view('admissions/login', $data);
+        $this->load->view('templates/footer');
+        } else{
+
+            
+            // get login details
+
+            // get username
+            $username = $this->input->post('username');
+            // get password and encryt it
+            $password = md5( $this->input->post('password'));
+
+            // user login
+            $student_adm_Id= $this->addmission_model->login_info($username, $password);
+            // die($username );
+            // die($password );
+            // do a check
+            if($student_adm_Id){
+
+             return redirect('admissions/applicationform');
+            // $this->session->set_flashData('login_success', ', You can now Log in');
+
+            } else{
+            $this->session->set_flashData('login_error', 'Invalid login detail, Please enter correct surname and password');
+
+                return redirect('admissions/login');
+            }
+
+            // die('continue');
+        }
+        
+    }
+
     function applicationform(){
         $data['title'] = "Create Account";
         
         $this->load->view('templates/header');
         $this->load->view('admissions/admissionapplicationform', $data);
         $this->load->view('templates/footer');
+
+        $this->addmission_model->create_student_biodata();
     }
 }

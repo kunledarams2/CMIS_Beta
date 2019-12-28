@@ -35,3 +35,14 @@
 </nav>
 
 <div class="container">
+
+<!-- flash messages -->
+<?php if($this->session->flashdata('account_created')) :?>
+<?php echo '<p class="alert alert-success">' .$this->session->flashdata('account_created'). '</p>'; ?>
+
+<?php endif; ?>
+
+<?php if($this->session->flashdata('login_error')) :?>
+<?php echo '<p class="alert alert-danger">' .$this->session->flashdata('login_error'). '</p>'; ?>
+
+<?php endif; ?>

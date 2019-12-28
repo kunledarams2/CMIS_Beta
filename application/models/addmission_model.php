@@ -44,7 +44,36 @@ class addmission_model extends CI_Model{
         }
    }
 
-    public function login_info(){
+    public function login_info($username, $password){
+        
+        // Validate
+         $this->db->where('username', $username);
+         $this->db->where('password', $password);
+
+         $result = $this->db->get('admission_create_account');
+        //  die($result->row(0)->id);
+
+        if($result->num_rows()==1){
+            return $result->row(0)->id;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function create_student_biodata(){
+
+        $data = array(
+
+           'surname'=>$this->input->post('surname'),
+           'firstname'=>$this->input->post('firstname'),
+           'othername'=>$this->input->post('othername'),
+           'religion'=>$this->input->post('religion'),
+           'age'=>$this->input->post('age'),
+
+        );
+
+        return $this->db->insert('admission_biodata',$data); 
 
     }
 }
