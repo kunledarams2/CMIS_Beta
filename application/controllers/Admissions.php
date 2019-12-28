@@ -106,6 +106,6 @@ class Admissions extends CI_Controller{
         $this->load->view('admissions/admissionapplicationform', $data);
         $this->load->view('templates/footer');
 
-        $this->addmission_model->create_student_biodata();
+        // $this->addmission_model->create_student_biodata();
     }
 }
