@@ -1,8 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['admissions/admissionapplicationform'] = 'admissions/admissionapplicationform';
-$route['admissions/applicationform'] = 'admissions/applicationform';
+$route['admissions/studentapplicationform'] = 'admissions/studentapplicationform';
+// $route['admissions/admissionapplicationform'] = 'admissions/admissionapplicationform';
+// $route['admissions/applicationform'] = 'admissions/applicationform';
 $route['admissions/createaccount'] = 'admissions/createaccount';
 $route['admissions/login'] = 'admissions/login';
 $route['posts/create'] = 'posts/create';

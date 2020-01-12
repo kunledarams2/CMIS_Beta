@@ -1,6 +1,6 @@
 <h4><?=$title?></h4>
-
-<?php echo form_open('admissions/admissionapplicationform')?>
+<?php echo validation_errors();?>
+<?php echo form_open('admissions/studentapplicationform')?>
 <div class="container box_header">
 
 	<ul class="nav nav-tabs">
@@ -58,8 +58,8 @@
 						</div>
 						<br>
 						<div claas="form-group">
-							<label>Age</label>
-							<input type="text" class="form-control" name="age" placeholder="Age" id="age">
+							<label>Date of Birth</label>
+							<input type="text" class="form-control" name="age" placeholder="mm/dd/yyyy" id="datepicker">
 							<span id="error_age" class="text-danger"></span>
 
 						</div>
@@ -72,7 +72,7 @@
 						<br>
 						<div align="center">
 							<!-- <button type="button" class="btn btn-default btn-lg"> Previous</button> -->
-							<button type="button" class="btn btn-info btn-lg" id="btn_basic_information"> Next </button>
+							<button type="button" class="btn btn-info btn-lg" id="btn_basic_information" name="btn_basic_information"> Next </button>
 
 						</div>
 					</div>
@@ -87,17 +87,21 @@
 				<br>
 					<div class="form-group">
 						<label>Genotype</label>
-						<input type="text" class="form-control" name="genotype" placeholder="Genotype">
+						<input type="text" class="form-control" name="genotype" placeholder="Genotype" id="genotype">
+						<span id="error_genotype" class="text-danger"></span>
+
 					</div>
 					<br>
 					<div class="form-group">
 						<label>Blood Group</label>
-						<input type="text" class="form-control" name="bloodgroup" placeholder="Blood Group">
+						<input type="text" class="form-control" name="bloodgroup" placeholder="Blood Group" id="bloodgroup">
+						<span id="error_blood_group" class="text-danger"></span>
 					</div>
 					<br>
 					<div class="form-group">
 						<label>Physical Health Challenge</label>
-						<input type="text" class="form-control" name="healthissue" placeholder="Physical Health Challenge">
+						<input type="text" class="form-control" name="healthissue" placeholder="Physical Health Challenge" id="healthissue">
+						<span id="error_health_issue" class="text-danger"></span>
 					</div>
 
 				</div>
@@ -119,15 +123,19 @@
 				<br>
 					<div class="form-group">
 						<label>Primary School Attended</label>
-						<input type="text" class="form-control" name="primaryschool" placeholder="">
+						<input type="text" class="form-control" name="primaryschool" placeholder="" id="pry_sch_name">
+						<span id="pry_sch_name_error" class="text-danger"></span>
 					</div>
 					<br>
 					<div class="form-group">
 						<label class="in-line">Start Date</label>
-						<input class="in-line" type="text" class="form-control" name="startdate" placeholder="">
+						<input class="in-line" type="text" class="form-control" name="startdate" placeholder="" id="prystartdatepicker">
+						<span id="pry_sch_start_date_error" class="text-danger"></span>
+						
 
 						<label class="in-line">End Date</label>
-						<input class="in-line" type="text" class="form-control" name="enddate" placeholder="">
+						<input class="in-line" type="text" class="form-control" name="enddate" placeholder=""  id="pryenddatepicker">
+						<span id="pry_sch_end_date_error" class="text-danger"></span>
 					</div>
 					<br>
 					<p>(JSS2 & SS1 only)</p>
@@ -138,10 +146,10 @@
 					<br>
 					<div class="form-group">
 						<label class="in-line">Start Date</label>
-						<input class="in-line" type="text" class="form-control" name="startdatesecondary" placeholder="">
+						<input class="in-line" type="text" class="form-control" name="startdatesecondary" placeholder="" id="secstartdatepicker">
 
 						<label class="in-line">End Date</label>
-						<input class="in-line" type="text" class="form-control" name="enddatesecondary" placeholder="">
+						<input class="in-line" type="text" class="form-control" name="enddatesecondary" placeholder=""id="secenddatepicker" >
 					</div>
 				</div>
 
@@ -176,7 +184,7 @@
 		   <br>
            <div class="form-group">
             <label >Full name of Pastor</label>
-             <input type="text" class="form-control" name="healthissue" placeholder="Physical Health Challenge">
+             <input type="text" class="form-control" name="pastorname" placeholder="Physical Health Challenge">
            </div>
          
          </div>
@@ -201,30 +209,37 @@
 		  <br>
            <div    class="form-group">
             <label >Name of Parent/Guardian</label>
-		
-             <input type="text" class="form-control" name="parent_name" placeholder="">
+             <input type="text" class="form-control" name="parentname" placeholder="" id="parent_name" >
+			 <span id="parent_name_error" class="text-danger"></span>
+
            </div>
            <div class="form-group">
             <label >Place of Residence (State/Town)</label>
-             <input type="text" class="form-control" name="parent_residence" placeholder="">
+             <input type="text" class="form-control" name="parentresidence" placeholder="" id="parent_address">
+			 <span id="parent_address_error" class="text-danger"></span>
+
            </div>
 
            <div class="form-group">
             <label >Mailings Address</label>
-             <input type="text" class="form-control" name="parent_maill" placeholder="">
+             <input type="text" class="form-control" name="parentmaill" placeholder="">
            </div>
 
            <div class="form-group">
             <label >Profession</label>
-             <input type="text" class="form-control" name="parent_profession" placeholder="">
+             <input type="text" class="form-control" name="parentprofession" placeholder="" id="parent_occupation">
+			 <span id="parent_professional_error" class="text-danger"></span>
+
            </div>
            <div class="form-group">
             <label >Telephone No (GSM)</label>
-             <input type="text" class="form-control" name="parent_phone" placeholder="">
+             <input type="text" class="form-control" name="parentphone" placeholder="" id="parent_phone_number">
+			 <span id="parent_phone_number_error" class="text-danger"></span>
+
            </div>
            <div class="form-group">
-            <label >E-mail</label>
-             <input type="email" class="form-control" name="parent_email" placeholder="">
+            <label >Email</label>
+             <input type="email" class="form-control" name="parentemail" placeholder="">
            </div>
          
          </div>
@@ -233,8 +248,10 @@
        </div>
 
        <div align="center">
-         <button type="button" class="btn btn-default btn-lg" id="btn_church_prev"> Previous</button>
-         <button type="button" class="btn btn-info btn-lg" id="btn_submit"> Submit </button>
+         <button type="button" class="btn btn-default btn-lg" id="btn_parent_details_prev"> Previous</button>
+         <button type="button" class="btn btn-info btn-lg" id="btn_parent_details_next"> Next</button>
+
+         <button type="submit" class="btn btn-info btn-lg" id="btn_submit" value="Submit" name="submit"> Submit </button>
        
        </div>
 	   </div>
