@@ -32,6 +32,8 @@ class Admissions extends CI_Controller{
         
     }
 
+
+
     // check username exist
 
     function check_username_exists($username){
@@ -130,30 +132,13 @@ class Admissions extends CI_Controller{
             }
 
         }
-        // if($this->input->post("submit")){
-        //     $this->form_validation->set_rules('parent_name', 'Parent_Name', 'required');
-
-        // }
-        
-
-        // $this->form_validation->set_rules('username', 'Username', 'required');
-        // $this->form_validation->set_rules('password', 'Password', 'required');
-        // $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'matches[password]');
-        
        
 
-        // if($this->form_validation->run()===FALSE){
-        //     // die('Successful');
-        //     
-        // }
-        // else {
+    }
 
-        //     $this->addmission_model->create_student_biodata($reg_id);
-        //     return redirect('admissions/applicationpaymentform');
+    function applicationform_2(){
 
-
-        // }
-
+        $this->load->view('admissions/applicationform_2');
     }
 
     function applicationpaymentform(){
