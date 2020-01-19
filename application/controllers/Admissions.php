@@ -127,11 +127,14 @@ class Admissions extends CI_Controller{
             $this->load->view('admissions/studentapplicationform', $data);
             $this->load->view('templates/footer');
         }
-
-     if($this->input->post('submit')){
+        else{
             $this->addmission_model->create_student_biodata($reg_id);
             return redirect('admissions/applicationpaymentform');
 
+        }
+
+     if($this->input->post('submit')){
+            
         }
        
     } 
