@@ -117,21 +117,25 @@ class Admissions extends CI_Controller{
     function studentapplicationform(){
         $data['title'] = "Biodata";
 
+        $this->load->view('templates/header');
+        $this->load->view('admissions/studentapplicationform', $data);
+        $this->load->view('templates/footer');
+
         $reg_id= $this->session->userdata('student_reg_id');
 
         $this->form_validation->set_rules('parentname', 'Name of Parent/Guardian', 'required');
         $this->form_validation->set_rules('parentemail', 'Email', 'trim|required');
-
-        if(empty($reg_id) || $this->form_validation->run()===FALSE){
-            $this->load->view('templates/header');
-            $this->load->view('admissions/studentapplicationform', $data);
-            $this->load->view('templates/footer');
+        if($this->input->post('submit_application')){
+            if($this->form_validation->run()===FALSE){
+                $this->session->set_flashData('application_error', 'Please continue to the session before you can submit');;
+               }
+               else{
+                   $this->addmission_model->create_student_biodata($reg_id);
+                   return redirect('admissions/applicationpaymentform');
+       
+               }
         }
-        else{
-            $this->addmission_model->create_student_biodata($reg_id);
-            return redirect('admissions/applicationpaymentform');
-
-        }
+        
 
      if($this->input->post('submit')){
             

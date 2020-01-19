@@ -78,3 +78,7 @@
 <?php echo '<p class="alert alert-danger">' .$this->session->flashdata('login_error'). '</p>'; ?>
 
 <?php endif; ?>
+
+<?php if($this->session->flashdata('application_error')):?>
+  <?php echo '<p class="alert alert-danger>'.$this->session->flashdata('application_error'). '</p>';?>
+<?php endif; ?>
