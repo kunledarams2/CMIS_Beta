@@ -251,7 +251,7 @@
          <button type="button" class="btn btn-default btn-lg" id="btn_parent_details_prev"> Previous</button>
          <button type="button" class="btn btn-info btn-lg" id="btn_parent_details_next"> Next</button>
 
-         <button type="submit" class="btn btn-info btn-lg" id="btn_submit" value="Submit" name="submit"> Submit </button>
+         <button type="submit" class="btn btn-info btn-lg" id="btn_submit" value="Submit" name="submit_application"> Submit </button>
        
        </div>
 	   </div>

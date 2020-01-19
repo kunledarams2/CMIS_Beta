@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>HFABlog</title>
+        <title>Kingdom Way Academy</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -9,6 +9,10 @@
         <script type='text/javascript'  src="<?php echo base_url(); ?>/assets/js/admissionform.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+
+        <link href="<?php echo base_url(); ?>/assets/css/icon_fonts/css/all_icons.min.css" rel="stylesheet">
 
         <script>
            $( function() {
@@ -32,7 +36,7 @@
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<?php echo base_url();?>">NYC Academy </a>
+  <a class="navbar-brand" href="<?php echo base_url();?>">Kingdom Way Academy </a>
   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
     <!-- <span class="navbar-toggler-icon"></span> -->
   <!-- </button> -->
@@ -41,15 +45,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url(); ?>">Home </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>posts">Blog</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(); ?>admissions/login">Admission</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->

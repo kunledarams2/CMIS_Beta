@@ -15,6 +15,7 @@
   </div>
   <div  align="center">
   <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
   <p><a href=<?php echo site_url('/admissions/createaccount')?>>New User? Create account</a> </p>
 
   </div>

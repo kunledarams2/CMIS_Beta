@@ -99,7 +99,7 @@ class Admissions extends CI_Controller{
                 return redirect('admissions/studentapplicationform');
               }else{
             
-                return redirect('admissions/login');
+                return redirect('admissions/applicationpaymentform');
               }
            
 
@@ -119,22 +119,24 @@ class Admissions extends CI_Controller{
 
         $reg_id= $this->session->userdata('student_reg_id');
 
+        $this->form_validation->set_rules('parentname', 'Name of Parent/Guardian', 'required');
+        $this->form_validation->set_rules('parentemail', 'Email', 'trim|required');
 
-        if(!empty($reg_id)){
+        if(empty($reg_id) || $this->form_validation->run()===FALSE){
             $this->load->view('templates/header');
             $this->load->view('admissions/studentapplicationform', $data);
             $this->load->view('templates/footer');
+        }
 
-            if($this->input->post('submit')){
-               $this->addmission_model->create_student_biodata($reg_id);
-                return redirect('admissions/applicationpaymentform');
-
-            }
+     if($this->input->post('submit')){
+            $this->addmission_model->create_student_biodata($reg_id);
+            return redirect('admissions/applicationpaymentform');
 
         }
        
+    } 
 
-    }
+
 
     function applicationform_2(){
 
@@ -143,9 +145,12 @@ class Admissions extends CI_Controller{
 
     function applicationpaymentform(){
 
-        $data['title'] = "Payment Information";
+        $data['title'] = "Application Payment";
 
+        $this->load->view('templates/header');
         $this->load->view('admissions/applicationpaymentform', $data);
+        $this->load->view('templates/footer');
+        
 
     }
 }
