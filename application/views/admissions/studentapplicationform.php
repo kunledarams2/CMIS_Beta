@@ -24,17 +24,17 @@
 	<div class="tab-content">
 		<div class="tab-pane active" id="basic_information">
 			<div class="panel panel-default">
-				<div class="panel-heading">Basic Information
+				<div class="panel-heading"> <b>Basic Information</b><br> Please fill your Basic information below noting that field with a "*" are required.
 					<div class="panel-body">
 					<br>
 						<div claas="form-group">
-							<label>Surname</label>
+							<label>*Surname</label>
 							<input type="text" class="form-control" name="surname" placeholder="Surname" id="surname">
 							<span id="error_surname" class="text-danger"></span>
 						</div>
 						<br>
 						<div claas="form-group">
-							<label>Firstname</label>
+							<label>*Firstname</label>
 							<input type="text" class="form-control" name="firstname" placeholder="Firstname" id="firstname">
 							<span id="error_firstname" class="text-danger"></span>
 						</div>
@@ -47,7 +47,7 @@
 						</div>
 						<br>
 						<div claas="form-group">
-							<label>Gender-</label>
+							<label>*Gender-</label>
 							<label class="in-line">
 								<input type="radio" name="gender" value="male" checked>Male
 							</label>
@@ -58,7 +58,7 @@
 						</div>
 						<br>
 						<div claas="form-group">
-							<label>Date of Birth</label>
+							<label>*Date of Birth</label>
 							<input type="text" class="form-control" name="age" placeholder="mm/dd/yyyy" id="datepicker">
 							<span id="error_age" class="text-danger"></span>
 

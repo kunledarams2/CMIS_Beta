@@ -24,6 +24,8 @@ class Admissions extends CI_Controller{
             $enc_password= md5($this->input->post('password'));
 
             $this->addmission_model->create_account($enc_password);
+            $this->addmission_model->send_email($this->input->post('email_address'));
+
             // flashing message before redirect
             $this->session->set_flashData('account_created', 'Your account is successfully created, You can now Log in');
             // die('continue');

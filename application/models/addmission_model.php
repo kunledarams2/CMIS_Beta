@@ -24,6 +24,61 @@ class addmission_model extends CI_Model{
 
     }
 
+    public function send_email($email){
+        // $config= $this->load->config('email');
+
+        $config = array(
+            'protocol' => 'sendmail', // 'mail', 'sendmail', or 'smtp'
+            'smtp_host' => 'smtp.googlemail.com', 
+            'smtp_port' => 465,
+            'smtp_user' => 'daramolaadekunle15@gmail.com',
+            'smtp_pass' => 'emmanuel1992',
+            'smtp_crypto' => 'ssl', //can be 'ssl' or 'tls' for example
+            'mailtype' => 'html', //plaintext 'text' mails or 'html'
+            'newline'=>'\r\n',
+            'smtp_timeout' => '4', //in seconds
+            'charset' => 'utf-8',
+            'wordwrap' => TRUE
+        );
+
+        $data = array(
+
+            'username'=>$this->input->post('username'),
+             'email_address'=>$this->input->post('email_address'),
+    
+   
+           );
+        $this->load->library('email');
+        $this->email->initialize($config);
+        $from = $this->config->item('smtp_user');
+        $to = $email;
+        // $subjuct=""
+        $body= $this->load->view('admissions/signupemail', $data,TRUE);
+
+        // $this->email->subject('Password reset request');
+        // $mail_message = 'Dear ' . $email . ',' . "<br>\r\n";
+        // $mail_message .= 'Thank you for starting your application,<br> Click On Link And Reset Password:<b><a href="http://www.ciadmin.local/welcome/update_password">Reset Password</a></b>'."\r\n";
+        // $mail_message .= '<br>Please Update your password.';
+        // $mail_message .= '<br>Thanks & Regards';
+        // $mail_message .= '<br>Red Feather Software';
+        // $this->$this->load->library('email');
+        
+        $this->email->from('daramolaadekunle15@gmail.com');
+        $this->email->to($email);
+        // $this->email->cc('another@example.com');
+        // $this->email->bcc('and@another.com');
+        
+        $this->email->subject('Application');
+        $this->email->message($body);
+        
+        if ($this->email->send()) {
+            echo 'Your Email has successfully been sent.';
+        } else {
+            show_error($this->email->print_debugger());
+        }
+        
+    }
+
     // check username exist
     public function check_username_exists($username){
          $query = $this->db->get_where('admission_create_account', array('username'=>$username)); 
